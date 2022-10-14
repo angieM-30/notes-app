@@ -1,5 +1,37 @@
-const write = require('./write');
-const cmd = process.argv[2]
-write(cmd);
-//write cmd
-const read = require('./read');
+//
+const add = require("./add");
+const del = require("./del");
+const read = require("./read");
+const write = require("./write");
+
+// get user input
+const cmd = process.argv;
+
+var note = {};
+
+if (cmd[2] == "add") {
+  //Build Object
+  note = {
+    id: cmd[3],
+    title: cmd[4],
+    body: cmd[5],
+  };
+  // Get old note value
+  var oldNote = read();
+
+  // Add note to note.txt
+  add(note, oldNote);
+}
+
+if (cmd[2] == "read") {
+  // Import present
+  const present = require("./present");
+
+  present(read());
+}
+
+if (cmd[2] == "delete") {
+  id = cmd[3];
+  oldNote = read();
+  del(id, oldNote);
+}
