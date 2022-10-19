@@ -1,12 +1,11 @@
-//
 const add = require('./add')
 const read = require('./read')
 const del = require('./del')
-const update = require('./update');
+const update = require('./update')
 // get user input
 const cmd = process.argv;
 
-if (cmd[2] == 'add') {
+if (cmd[2] ==='add') {
   //Build Object
 const note = {
     "id": cmd[3],
@@ -17,35 +16,37 @@ const note = {
   const oldNote = read()
 
  // Add this newNote to Note.txt
-  add(note, oldNote);
-   console.log(add)
-
+  add(note,oldNote);
+  console.log(add)
 }
 
 // Read Notes.txt
-if (cmd[2] == 'read') // read
+if (cmd[2] === 'read') // important present
 {
-  console.log(read());
+ const present = require('./present')
+ present(read())
+ console.log (read)
 }
 
-if (cmd[2] == "delete") {
-  const id = cmd[3];
-  const oldNote = read()
-  const del = require('./del')
+// Delete from the note.txt
+if (cmd[2] === "delete") {
+
+  const id = cmd[3]
+  const oldNote = read ()
   del(id, oldNote)
   console.log(del)
 }
 
-const note = {}
-if (cmd[2] == 'update') {
+// Update function
+if (cmd[2] === 'update') {
   let note = {
-    id: cmd [3],
-    title: cmd [4],
+    id: cmd[3],
+    title: cmd[4],
     body: cmd [5]
   }
 
-const oldNote = read ()
-update(note, oldNote)
-console.log (update)
+const newNote = read ()
+update(note, newNote)
+console.log(update)
 
 }
