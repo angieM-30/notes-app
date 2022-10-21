@@ -1,1 +1,1 @@
-[{"id":"01","title":"MIKE","body":"STEPHEN"},{"id":"02","title":"bxmdjz","body":"jidijn"},{"id":"02","title":"ANgie","body":"madrona"}]
+[{"id":"01","title":"First Note","body":"Need to do assignments on lab class"},{"id":"02","title":"bxmdjz","body":"jidijn"},{"id":"03","title":"Last Note","body":"Finish code"}]
